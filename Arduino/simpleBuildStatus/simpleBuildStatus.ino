@@ -28,7 +28,7 @@ byte mac[] = { 0xD90, 0xDA2, 0xDDA, 0xD00, 0xD3D, 0xDB8 };
 IPAddress ip(192,168,15,223);
 //IPAddress server(192,168,15,138); //mnp-81222
 //IPAddress server(173,194,41,105); //google.com
-char server[] = "FQbuildServerName";
+char server[] = "mnp-bld1.moonpig.com"; //mnp-bld1
 
 EthernetClient client;
   
@@ -87,7 +87,7 @@ static int GetServerStatus()
 
     if (client.connect(server, 80)) {
       client.println("GET /simpleBuildStatus.html?projectId=DeploymentPipeline&guest=1 HTTP/1.0");   
-      client.println("Host: FQbuildServerName");
+      client.println("Host: mnp-bld1.moonpig.com");
       client.println("Connection: close");
       client.println();
     } 
